@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aksesibilitas - Coach Ajeng</title>
+<style>
+  :root{
+    --primary:#00A99D;
+    --primary-dark:#007f77;
+    --bg:#ffffff;
+    --text:#1f2937;
+    --border:#dbe4e8;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    padding:14px;
+    font-family:Arial, Helvetica, sans-serif;
+    background:transparent;
+    color:var(--text);
+    font-size:16px;
+  }
+  .widget{
+    width:min(100%,360px);
+    margin:auto;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:0 8px 24px rgba(0,0,0,.12);
+    overflow:hidden;
+  }
+  .header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 16px;
+    background:var(--primary);
+    color:white;
+    font-weight:700;
+    font-size:18px;
+  }
+  .access-icon{
+    width:34px;height:34px;border-radius:50%;
+    display:grid;place-items:center;
+    background:white;color:var(--primary);
+    font-size:22px;
+  }
+  .content{padding:14px}
+  .intro{margin:0 0 12px;line-height:1.5}
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+  }
+  button{
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:11px 8px;
+    background:#f7fafb;
+    color:var(--text);
+    cursor:pointer;
+    font-weight:600;
+    min-height:48px;
+  }
+  button:hover, button:focus{
+    outline:3px solid rgba(0,169,157,.25);
+    border-color:var(--primary);
+  }
+  .reset{grid-column:1/-1;background:var(--primary);color:white;border-color:var(--primary)}
+  .sample{
+    margin-top:14px;
+    padding:12px;
+    border-radius:12px;
+    background:#f4f8f8;
+    line-height:1.6;
+  }
+  .sample a{color:#006f68}
+  .note{
+    margin:12px 2px 0;
+    font-size:12px;
+    line-height:1.45;
+    color:#667085;
+  }
+
+  body.high-contrast .widget{background:#000;color:#fff;border-color:#fff}
+  body.high-contrast .header{background:#000;color:#fff;border-bottom:2px solid #fff}
+  body.high-contrast .access-icon{background:#fff;color:#000}
+  body.high-contrast button{background:#000;color:#fff;border:2px solid #fff}
+  body.high-contrast .sample{background:#000;color:#fff;border:1px solid #fff}
+  body.high-contrast a{color:#ffff00!important}
+  body.grayscale{filter:grayscale(1)}
+  body.readable{font-family:Verdana, Arial, sans-serif;letter-spacing:.04em;word-spacing:.10em}
+  body.underline-links a{text-decoration:underline!important;text-decoration-thickness:2px!important}
+</style>
+</head>
+<body>
+<section class="widget" aria-label="Panel aksesibilitas Coach Ajeng">
+  <div class="header">
+    <div class="access-icon" aria-hidden="true">♿</div>
+    <div>AKSESIBILITAS</div>
+  </div>
+
+  <div class="content">
+    <p class="intro">Sesuaikan tampilan agar materi lebih nyaman dibaca.</p>
+
+    <div class="grid">
+      <button type="button" onclick="changeFont(2)" aria-label="Perbesar ukuran teks">A+ Perbesar</button>
+      <button type="button" onclick="changeFont(-2)" aria-label="Perkecil ukuran teks">A− Perkecil</button>
+      <button type="button" onclick="toggleClass('high-contrast')">◐ Kontras Tinggi</button>
+      <button type="button" onclick="toggleClass('grayscale')">◑ Grayscale</button>
+      <button type="button" onclick="toggleClass('readable')">Aa Mudah Dibaca</button>
+      <button type="button" onclick="toggleClass('underline-links')">🔗 Perjelas Tautan</button>
+      <button type="button" class="reset" onclick="resetAccessibility()">↻ Reset Tampilan</button>
+    </div>
+
+    <div class="sample" id="sample">
+      <strong>Coach Ajeng</strong><br>
+      Jelajahi materi pembelajaran dengan tampilan yang nyaman.
+      <br><a href="#" onclick="return false;">Contoh tautan pembelajaran</a>
+    </div>
+
+    <p class="note">
+      Catatan: pada Google Sites, widget yang disematkan bekerja di dalam area embed.
+      Pengaturan di atas tidak dapat mengubah elemen Google Sites di luar widget.
+    </p>
+  </div>
+</section>
+
+<script>
+let fontSize = 16;
+
+function changeFont(delta){
+  fontSize = Math.max(12, Math.min(28, fontSize + delta));
+  document.body.style.fontSize = fontSize + 'px';
+}
+
+function toggleClass(name){
+  document.body.classList.toggle(name);
+}
+
+function resetAccessibility(){
+  fontSize = 16;
+  document.body.style.fontSize = '16px';
+  document.body.classList.remove(
+    'high-contrast','grayscale','readable','underline-links'
+  );
+}
+</script>
+</body>
+</html>
