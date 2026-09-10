@@ -1,14 +1,14 @@
-Paket multipage Coach Ajeng Choi.
+WEBSITE COACH AJENG CHOI - VERSI FINAL
 
-Upload SEMUA file ke root repository GitHub Pages.
-File utama:
-- index.html
-- agenda1.html
-- agenda2.html
-- agenda3.html
-- agenda4.html
-- seluruh PNG
+Perubahan:
+- Agenda 1–4 langsung menuju Google Sites yang sudah dipisahkan.
+- Ditambahkan gambar JEMARI dan Games JEMARI.
+- Semua tulisan tampilan 'Ajeng' dibuat menjadi 'Ajeng Choi'.
+- Menu aksesibilitas tetap tersedia.
 
-Setelah commit, tunggu deployment selesai lalu Ctrl+F5.
-
-Catatan: setiap halaman Agenda kini berdiri sendiri. Tombol 'Buka Materi Lama' masih membuka Google Sites lama sebagai referensi. Agar benar-benar bebas dari Google Sites, isi materi perlu dipindahkan ke file agenda1.html s.d. agenda4.html.
+Cara update GitHub:
+1. Ekstrak file ZIP.
+2. Upload semua file di dalam folder ini ke root repository aksesibilitas-coach-ajeng.
+3. Jika GitHub meminta konfirmasi penggantian index.html, gunakan file yang baru.
+4. Commit changes.
+5. Tunggu GitHub Pages selesai deploy lalu tekan Ctrl+F5 pada website.
