@@ -1,271 +1,67 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coach Ajeng | Pembelajaran Latsar CPNS</title>
-<meta name="description" content="Ruang belajar digital Coach Ajeng untuk pembelajaran Latsar CPNS.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Coach Ajeng Choi | Latsar CPNS</title>
 <style>
-:root {
-  --primary:#00A99D;
-  --primary-dark:#007F77;
-  --primary-soft:#E9F8F6;
-  --bg:#F7FBFB;
-  --card:#FFFFFF;
-  --text:#17313A;
-  --muted:#61717A;
-  --border:#DBE9E8;
-  --font-size:16px;
-  --line-height:1.65;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  font-size:var(--font-size);
-  line-height:var(--line-height);
-  color:var(--text);
-  background:var(--bg);
-}
-a{color:var(--primary-dark)}
-a:focus,button:focus{outline:3px solid #ffbf47;outline-offset:3px}
-.skip-link{position:absolute;left:-9999px;top:8px;background:#000;color:#fff;padding:10px 14px;z-index:9999}
-.skip-link:focus{left:8px}
-
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border)}
-.nav{max-width:1180px;margin:auto;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{font-size:1.15rem;font-weight:800;text-decoration:none;color:var(--text)}
-.nav-links{display:flex;flex-wrap:wrap;gap:14px}
-.nav-links a{font-size:.93rem;font-weight:700;text-decoration:none}
-
-.hero{max-width:1180px;margin:auto;padding:72px 20px 56px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-.badge{display:inline-block;padding:7px 12px;border-radius:999px;background:var(--primary-soft);font-weight:700;margin-bottom:14px}
-.hero h1{font-size:clamp(2.15rem,5vw,4.2rem);line-height:1.08;margin:0 0 18px}
-.hero p{font-size:1.12rem;color:var(--muted);max-width:740px}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-.btn{display:inline-block;padding:12px 18px;border-radius:12px;border:2px solid var(--primary);text-decoration:none;font-weight:800}
-.btn.primary{background:var(--primary);color:#fff}
-.btn.secondary{background:#fff;color:var(--primary-dark)}
-
-.hero-card{background:linear-gradient(145deg,#fff,#edf9f7);border:1px solid var(--border);border-radius:28px;padding:24px;box-shadow:0 18px 45px rgba(0,0,0,.08);text-align:center}
-.hero-photo{width:220px;height:220px;object-fit:cover;object-position:center 18%;border-radius:50%;border:6px solid #fff;box-shadow:0 8px 22px rgba(0,0,0,.12)}
-.hero-card h2{margin-bottom:4px}
-.hero-card p{font-size:.98rem;margin-top:4px}
-
-section{max-width:1180px;margin:auto;padding:58px 20px}
-.section-title{font-size:2rem;margin:0 0 10px}
-.section-lead{color:var(--muted);margin-top:0;max-width:850px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:0 10px 28px rgba(0,0,0,.05)}
-.card h3{margin-top:0;font-size:1.25rem}
-.card p{color:var(--muted)}
-.icon{font-size:2rem;margin-bottom:8px}
-.card-link{display:inline-block;margin-top:8px;font-weight:800;text-decoration:none}
-.card-link:hover{text-decoration:underline}
-
-.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}
-.feature{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
-.feature p{color:var(--muted)}
-
-footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;color:var(--muted);background:#fff}
-
-/* Aksesibilitas */
-.acc-wrap{position:fixed;right:18px;bottom:18px;z-index:1000}
-.acc-toggle{width:58px;height:58px;border-radius:50%;border:none;background:var(--primary);color:#fff;font-size:28px;cursor:pointer;box-shadow:0 8px 25px rgba(0,0,0,.22)}
-.acc-panel{position:absolute;right:0;bottom:70px;width:310px;background:#fff;color:#172b33;border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:0 15px 35px rgba(0,0,0,.18);display:none}
-.acc-panel.open{display:block}
-.acc-panel h2{font-size:1rem;margin:0 0 12px}
-.acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.acc-grid button{padding:10px;border:1px solid var(--border);border-radius:10px;background:#f7faf9;cursor:pointer;font-weight:700}
-.acc-grid .full{grid-column:1/-1;background:var(--primary);color:#fff}
-
-body.high-contrast{--bg:#000;--card:#000;--text:#fff;--muted:#fff;--border:#fff;--primary-soft:#000;background:#000;color:#fff}
-body.high-contrast header,body.high-contrast footer,body.high-contrast .hero-card,body.high-contrast .card,body.high-contrast .feature,body.high-contrast .acc-panel{background:#000!important;color:#fff!important;border-color:#fff!important}
-body.high-contrast a{color:#ffff00!important}
-body.high-contrast .btn{border-color:#fff}
-body.high-contrast .btn.primary{background:#fff;color:#000}
-body.high-contrast .btn.secondary{background:#000;color:#fff}
-body.high-contrast .acc-grid button{background:#000;color:#fff;border-color:#fff}
-body.grayscale{filter:grayscale(1)}
-body.readable{font-family:Verdana,Arial,sans-serif;letter-spacing:.035em;word-spacing:.08em}
-body.underline-links a{text-decoration:underline!important;text-decoration-thickness:2px!important}
-body.large-spacing{line-height:1.95}
-body.large-spacing p,body.large-spacing li{margin-bottom:1.1em}
-
-@media(max-width:850px){
-  .hero{grid-template-columns:1fr;padding-top:46px}
-  .grid,.feature-grid{grid-template-columns:1fr}
-  .nav{align-items:flex-start;flex-direction:column}
-  .nav-links{gap:10px}
-  .hero-photo{width:180px;height:180px}
-}
+:root{--p:#00a99d;--pd:#067b75;--n:#12385d;--bg:#f7fbfc;--t:#17313a;--m:#60737b;--b:#dfeceb;--fs:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;font-size:var(--fs);line-height:1.65;color:var(--t);background:var(--bg)}
+img{max-width:100%;display:block}a{color:var(--pd)}a:focus,button:focus{outline:3px solid #ffbf47;outline-offset:3px}
+header{position:sticky;top:0;z-index:50;background:#fffffff5;border-bottom:1px solid var(--b)}
+nav{max-width:1200px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:18px}.brand{font-weight:800;font-size:1.15rem;text-decoration:none;color:var(--n)}.navlinks{display:flex;gap:16px;flex-wrap:wrap}.navlinks a{text-decoration:none;font-weight:700}
+.hero{max-width:1200px;margin:auto;padding:64px 20px 50px;display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:center}.tag{display:inline-block;background:#e7f8f6;color:var(--pd);padding:7px 12px;border-radius:999px;font-weight:700}.hero h1{font-size:clamp(2rem,5vw,4rem);line-height:1.08;margin:14px 0 18px;color:var(--n)}.hero h1 strong{color:var(--pd)}.hero p{font-size:1.1rem;color:var(--m)}.quote{font-weight:800!important;color:var(--n)!important}
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:800;border:2px solid var(--p);margin:8px 8px 0 0}.primary{background:var(--p);color:#fff}.secondary{background:#fff;color:var(--pd)}
+.profile{background:linear-gradient(145deg,#fff,#edf9f7);border:1px solid var(--b);border-radius:28px;padding:22px;text-align:center;box-shadow:0 16px 40px #0001}.profile img{width:220px;height:220px;object-fit:cover;object-position:center 18%;border-radius:50%;margin:auto;border:6px solid #fff}.profile h2{margin:14px 0 4px;color:var(--n)}.profile p{margin:0;color:var(--m)}
+section{max-width:1200px;margin:auto;padding:54px 20px}.title{font-size:2rem;margin:0;color:var(--n)}.lead{margin:0;color:var(--m)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px}.card{background:#fff;border:1px solid var(--b);border-radius:22px;overflow:hidden;box-shadow:0 10px 28px #0000000d}.card img{width:100%;aspect-ratio:16/9;object-fit:cover}.body{padding:20px}.body h3{margin:0 0 6px;color:var(--n)}.body p{margin:0 0 12px;color:var(--m)}.link{font-weight:800;text-decoration:none}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:28px}.feature{background:#fff;border:1px solid var(--b);border-radius:20px;padding:24px;box-shadow:0 10px 28px #0000000d}.feature h3{margin-top:0;color:var(--n)}.feature p{color:var(--m)}
+.gems{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}.gem{background:#fff;border:1px solid var(--b);border-radius:20px;overflow:hidden;box-shadow:0 10px 28px #0000000d}.gem img{width:100%;aspect-ratio:1/1;object-fit:cover}.gem .body{padding:16px}
+footer{padding:28px 20px;text-align:center;color:var(--m);background:#fff;border-top:1px solid var(--b)}
+.acc{position:fixed;right:18px;bottom:18px;z-index:1000}.toggle{width:58px;height:58px;border-radius:50%;border:none;background:var(--p);color:#fff;font-size:28px;cursor:pointer;box-shadow:0 8px 24px #0003}.panel{position:absolute;right:0;bottom:70px;width:310px;background:#fff;border:1px solid var(--b);border-radius:18px;padding:16px;box-shadow:0 15px 35px #0003;display:none}.panel.open{display:block}.panel h2{font-size:1rem;margin:0 0 12px}.ag{display:grid;grid-template-columns:1fr 1fr;gap:8px}.ag button{padding:10px;border:1px solid var(--b);border-radius:10px;background:#f7faf9;font-weight:700}.ag .full{grid-column:1/-1;background:var(--p);color:#fff}
+body.hc{background:#000;color:#fff}body.hc header,body.hc footer,body.hc .profile,body.hc .card,body.hc .feature,body.hc .gem,body.hc .panel{background:#000!important;color:#fff!important;border-color:#fff!important}body.hc h1,body.hc h2,body.hc h3,body.hc p{color:#fff!important}body.hc a{color:#ff0!important}
+body.gray{filter:grayscale(1)}body.read{font-family:Verdana,Arial,sans-serif;letter-spacing:.035em;word-spacing:.08em}body.ul a{text-decoration:underline!important;text-decoration-thickness:2px!important}body.space{line-height:1.95}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.gems{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.grid2,.features,.gems{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column}.profile img{width:180px;height:180px}}
 </style>
 </head>
 <body>
-<a class="skip-link" href="#konten">Lewati ke konten utama</a>
-
-<header>
-<nav class="nav" aria-label="Navigasi utama">
-  <a class="brand" href="#beranda">Coach Ajeng</a>
-  <div class="nav-links">
-    <a href="#agenda">Agenda</a>
-    <a href="#jemari">JEMARI</a>
-    <a href="#gamifikasi">Gamifikasi</a>
-    <a href="#tanya">Tanya Coach Ajeng</a>
-  </div>
-</nav>
-</header>
-
-<main id="konten">
+<header><nav><a class="brand" href="#beranda">Coach Ajeng Choi</a><div class="navlinks"><a href="#agenda">Agenda</a><a href="#jemari">JEMARI</a><a href="#gamifikasi">Gamifikasi</a><a href="#tanya">Tanya Coach Ajeng</a></div></nav></header>
+<main>
 <section class="hero" id="beranda">
-  <div>
-    <span class="badge">Pembelajaran Latsar CPNS</span>
-    <h1>Belajar lebih mudah bersama Coach Ajeng</h1>
-    <p>Ruang belajar digital untuk menjelajahi materi Latsar CPNS, mulai dari Agenda 1, Agenda 2, Agenda 3, Agenda 4, materi antikorupsi, gamifikasi, hingga bantuan chatbot AI.</p>
-    <div class="cta-row">
-      <a class="btn primary" href="#agenda">Mulai Belajar</a>
-      <a class="btn secondary" href="#tanya">Tanya Coach Ajeng</a>
-    </div>
-  </div>
-  <aside class="hero-card" aria-label="Profil Coach Ajeng">
-    <img class="hero-photo" src="coach-ajeng.png" alt="Ilustrasi Coach Ajeng berhijab biru dan berkacamata">
-    <h2>Coach Ajeng</h2>
-    <p>Pendamping pembelajaran Latsar CPNS</p>
-  </aside>
+<div><span class="tag">Pelatihan Dasar (Latsar) CPNS</span><h1>Selamat Datang di <strong>Coach Ajeng Choi</strong> 👋</h1>
+<p>Ruang belajar dan pendampingan <strong>Pelatihan Dasar (Latsar) CPNS</strong> untuk membantu peserta memahami materi <strong>Agenda 1, 2, 3, dan 4</strong> melalui modul, media pembelajaran interaktif, gamifikasi, dan <strong>Asisten Pembelajaran AI</strong>.</p>
+<p class="quote">“Belajar lebih mudah, interaktif, dan bermakna.”</p>
+<a class="btn primary" href="#agenda">Mulai Belajar</a><a class="btn secondary" href="#tanya">Tanya Coach Ajeng</a></div>
+<aside class="profile"><img src="coach-ajeng.png" alt="Ilustrasi Coach Ajeng Choi"><h2>Coach Ajeng Choi</h2><p>Pendamping pembelajaran Latsar CPNS</p></aside>
 </section>
 
-<section id="agenda">
-  <h2 class="section-title">Materi Agenda</h2>
-  <p class="section-lead">Pilih agenda untuk membuka materi pembelajaran pada Google Sites.</p>
-  <div class="grid">
-    <article class="card">
-      <div class="icon" aria-hidden="true">🇮🇩</div>
-      <h3>Agenda 1</h3>
-      <p>Sikap Perilaku Bela Negara, wawasan kebangsaan, nilai dasar bela negara, dan kesiapsiagaan bela negara.</p>
-      <a class="card-link" href="https://sites.google.com/view/latsaragenda1/modul-agenda-1" target="_blank" rel="noopener">Buka Materi Agenda 1 →</a>
-    </article>
-    <article class="card">
-      <div class="icon" aria-hidden="true">🤝</div>
-      <h3>Agenda 2</h3>
-      <p>Nilai-nilai dasar ASN BerAKHLAK dan penerapannya dalam pelaksanaan tugas ASN.</p>
-      <a class="card-link" href="https://sites.google.com/view/latsaragenda1/modul-agenda-2" target="_blank" rel="noopener">Buka Materi Agenda 2 →</a>
-    </article>
-    <article class="card">
-      <div class="icon" aria-hidden="true">💡</div>
-      <h3>Agenda 3</h3>
-      <p>Kedudukan dan peran ASN dalam mendukung terwujudnya Smart Governance sesuai ketentuan peraturan perundang-undangan.</p>
-      <a class="card-link" href="https://sites.google.com/view/latsaragenda1/modul-agenda-3" target="_blank" rel="noopener">Buka Materi Agenda 3 →</a>
-    </article>
-    <article class="card">
-      <div class="icon" aria-hidden="true">🎯</div>
-      <h3>Agenda 4</h3>
-      <p>Habituasi dan aktualisasi untuk menerapkan nilai ASN melalui penyelesaian isu di tempat kerja.</p>
-      <a class="card-link" href="https://sites.google.com/view/latsaragenda1/modul-agenda-4" target="_blank" rel="noopener">Buka Materi Agenda 4 →</a>
-    </article>
-  </div>
-</section>
+<section id="agenda"><h2 class="title">Materi Agenda</h2><p class="lead">Pilih agenda untuk membuka materi pembelajaran.</p><div class="grid2">
+<article class="card"><img src="agenda-1.png" alt="Agenda 1 Sikap Perilaku Bela Negara"><div class="body"><h3>Agenda 1</h3><p>Sikap Perilaku Bela Negara.</p><a class="link" href="https://sites.google.com/view/latsaragenda1/modul-agenda-1" target="_blank">Buka Materi Agenda 1 →</a></div></article>
+<article class="card"><img src="agenda-2.png" alt="Agenda 2 Nilai-Nilai Dasar PNS"><div class="body"><h3>Agenda 2</h3><p>Nilai-Nilai Dasar PNS.</p><a class="link" href="https://sites.google.com/view/latsaragenda1/modul-agenda-2" target="_blank">Buka Materi Agenda 2 →</a></div></article>
+<article class="card"><img src="agenda-3.png" alt="Agenda 3 Kedudukan dan Peran PNS"><div class="body"><h3>Agenda 3</h3><p>Kedudukan dan Peran PNS untuk mendukung terwujudnya Smart Governance sesuai dengan ketentuan peraturan perundang-undangan.</p><a class="link" href="https://sites.google.com/view/latsaragenda1/modul-agenda-3" target="_blank">Buka Materi Agenda 3 →</a></div></article>
+<article class="card"><img src="agenda-4.png" alt="Agenda 4 Habituasi"><div class="body"><h3>Agenda 4</h3><p>Habituasi.</p><a class="link" href="https://sites.google.com/view/latsaragenda1/modul-agenda-4" target="_blank">Buka Materi Agenda 4 →</a></div></article>
+</div></section>
 
-<section id="jemari">
-  <h2 class="section-title">JEMARI</h2>
-  <p class="section-lead"><strong>Jelajah Materi Anti Korupsi</strong> — eksplorasi materi integritas dan antikorupsi secara lebih interaktif.</p>
-  <div class="feature-grid">
-    <div class="feature"><h3>Eksplorasi Materi</h3><p>Pelajari konsep, contoh, dan penerapan nilai integritas.</p></div>
-    <div class="feature"><h3>Refleksi</h3><p>Hubungkan materi antikorupsi dengan situasi nyata di tempat kerja.</p></div>
-    <div class="feature"><h3>Metasteps</h3><p>Jelajahi pengalaman belajar JEMARI melalui Metasteps.</p><a class="card-link" href="https://metasteps.com/viewer/1ce4f5fa-6761-4f24-a8d2-77fb83dcf589" target="_blank" rel="noopener">Buka JEMARI →</a></div>
-  </div>
-</section>
+<section id="jemari"><h2 class="title">JEMARI</h2><p class="lead"><strong>Jelajah Materi Anti Korupsi</strong></p><div class="features">
+<div class="feature"><h3>JEMARI / Metasteps</h3><p>Jelajahi materi antikorupsi secara interaktif melalui Metasteps.</p><a class="link" href="https://metasteps.com/viewer/1ce4f5fa-6761-4f24-a8d2-77fb83dcf589" target="_blank">Buka JEMARI →</a></div>
+<div class="feature" id="gamifikasi"><h3>Games JEMARI</h3><p>Belajar sambil bermain melalui gamifikasi Wordwall.</p><a class="link" href="https://s.kemkes.go.id/Games%20JEMARI" target="_blank">Mulai Games JEMARI →</a></div>
+</div></section>
 
-<section id="gamifikasi">
-  <h2 class="section-title">Gamifikasi Antikorupsi</h2>
-  <p class="section-lead">Belajar melalui permainan singkat untuk memperkuat pemahaman materi.</p>
-  <div class="card">
-    <h3>🎮 Games JEMARI</h3>
-    <p>Uji pemahaman melalui gamifikasi antikorupsi.</p>
-    <a class="card-link" href="https://s.kemkes.go.id/Games%20JEMARI" target="_blank" rel="noopener">Mulai Games JEMARI →</a>
-  </div>
-</section>
-
-<section id="tanya">
-  <h2 class="section-title">Tanya Coach Ajeng</h2>
-  <p class="section-lead">Pilih agenda dan gunakan chatbot berbasis Google Gemini untuk bertanya lebih jauh tentang materi pembelajaran.</p>
-  <div class="grid">
-    <article class="card">
-      <h3>💬 Tanya Coach Ajeng – Agenda 1</h3>
-      <p>Tanyakan materi Sikap Perilaku Bela Negara.</p>
-      <a class="card-link" href="https://gemini.google.com/gem/1qGmxjtb8rqb0rbYP0NAcRlCW8TkzRpfu?usp=sharing" target="_blank" rel="noopener">Buka Coach Ajeng Agenda 1 →</a>
-    </article>
-    <article class="card">
-      <h3>💬 Tanya Coach Ajeng – Agenda 2</h3>
-      <p>Tanyakan materi nilai-nilai dasar ASN BerAKHLAK.</p>
-      <a class="card-link" href="https://gemini.google.com/gem/1jhBIIQHL7KJPGHnP1NTrjkdC7-zy-Gnf?usp=sharing" target="_blank" rel="noopener">Buka Coach Ajeng Agenda 2 →</a>
-    </article>
-    <article class="card">
-      <h3>💬 Tanya Coach Ajeng – Agenda 3</h3>
-      <p>Tanyakan materi kedudukan dan peran ASN.</p>
-      <a class="card-link" href="https://gemini.google.com/gem/1IMY7x1VNgDVvuTmLtlMsbCvSuVQwo_6J?usp=sharing" target="_blank" rel="noopener">Buka Coach Ajeng Agenda 3 →</a>
-    </article>
-    <article class="card">
-      <h3>💬 Tanya Coach Ajeng – Agenda 4</h3>
-      <p>Tanyakan materi habituasi dan aktualisasi.</p>
-      <a class="card-link" href="https://gemini.google.com/gem/128Xg1TMFVpR3sGMKshYR9glx_sICL2PB?usp=sharing" target="_blank" rel="noopener">Buka Coach Ajeng Agenda 4 →</a>
-    </article>
-  </div>
-</section>
+<section id="tanya"><h2 class="title">Tanya Coach Ajeng</h2><p class="lead">Gunakan Asisten Pembelajaran AI untuk bertanya tentang materi setiap agenda.</p><div class="gems">
+<article class="gem"><img src="tanya-agenda-1.png" alt="Tanya Coach Ajeng Agenda 1"><div class="body"><h3>Agenda 1</h3><a class="link" href="https://gemini.google.com/gem/1qGmxjtb8rqb0rbYP0NAcRlCW8TkzRpfu?usp=sharing" target="_blank">Mulai Tanya →</a></div></article>
+<article class="gem"><img src="tanya-agenda-2.png" alt="Tanya Coach Ajeng Agenda 2"><div class="body"><h3>Agenda 2</h3><a class="link" href="https://gemini.google.com/gem/1jhBIIQHL7KJPGHnP1NTrjkdC7-zy-Gnf?usp=sharing" target="_blank">Mulai Tanya →</a></div></article>
+<article class="gem"><img src="tanya-agenda-3.png" alt="Tanya Coach Ajeng Agenda 3"><div class="body"><h3>Agenda 3</h3><a class="link" href="https://gemini.google.com/gem/1IMY7x1VNgDVvuTmLtlMsbCvSuVQwo_6J?usp=sharing" target="_blank">Mulai Tanya →</a></div></article>
+<article class="gem"><img src="tanya-agenda-4.png" alt="Tanya Coach Ajeng Agenda 4"><div class="body"><h3>Agenda 4</h3><a class="link" href="https://gemini.google.com/gem/128Xg1TMFVpR3sGMKshYR9glx_sICL2PB?usp=sharing" target="_blank">Mulai Tanya →</a></div></article>
+</div></section>
 </main>
+<footer>© 2026 Coach Ajeng Choi • Media Pembelajaran Latsar CPNS</footer>
 
-<footer>© 2026 Coach Ajeng • Media Pembelajaran Latsar CPNS</footer>
-
-<div class="acc-wrap">
-  <button class="acc-toggle" id="accToggle" aria-label="Buka menu aksesibilitas" aria-expanded="false">♿</button>
-  <div class="acc-panel" id="accPanel" role="dialog" aria-label="Pengaturan aksesibilitas">
-    <h2>Pengaturan Aksesibilitas</h2>
-    <div class="acc-grid">
-      <button type="button" onclick="changeFont(2)">A+ Perbesar</button>
-      <button type="button" onclick="changeFont(-2)">A− Perkecil</button>
-      <button type="button" onclick="toggleMode('high-contrast')">◐ Kontras</button>
-      <button type="button" onclick="toggleMode('grayscale')">◑ Grayscale</button>
-      <button type="button" onclick="toggleMode('readable')">Aa Mudah Dibaca</button>
-      <button type="button" onclick="toggleMode('underline-links')">🔗 Perjelas Tautan</button>
-      <button type="button" onclick="toggleMode('large-spacing')">↕ Spasi Teks</button>
-      <button type="button" onclick="speakPage()">🔊 Baca Halaman</button>
-      <button type="button" class="full" onclick="resetAccessibility()">↻ Reset Tampilan</button>
-    </div>
-  </div>
-</div>
-
+<div class="acc"><button class="toggle" id="toggle" aria-label="Buka menu aksesibilitas">♿</button><div class="panel" id="panel"><h2>Pengaturan Aksesibilitas</h2><div class="ag">
+<button onclick="font(2)">A+ Perbesar</button><button onclick="font(-2)">A− Perkecil</button><button onclick="mode('hc')">◐ Kontras</button><button onclick="mode('gray')">◑ Grayscale</button><button onclick="mode('read')">Aa Mudah Dibaca</button><button onclick="mode('ul')">🔗 Perjelas Tautan</button><button onclick="mode('space')">↕ Spasi Teks</button><button onclick="speak()">🔊 Baca Halaman</button><button class="full" onclick="resetA()">↻ Reset Tampilan</button>
+</div></div></div>
 <script>
-let currentFont=16;
-const root=document.documentElement;
-const accToggle=document.getElementById('accToggle');
-const accPanel=document.getElementById('accPanel');
-
-accToggle.addEventListener('click',()=>{
-  const open=accPanel.classList.toggle('open');
-  accToggle.setAttribute('aria-expanded',open?'true':'false');
-});
-function changeFont(delta){
-  currentFont=Math.max(12,Math.min(26,currentFont+delta));
-  root.style.setProperty('--font-size',currentFont+'px');
-}
-function toggleMode(name){document.body.classList.toggle(name)}
-function resetAccessibility(){
-  currentFont=16;
-  root.style.setProperty('--font-size','16px');
-  document.body.classList.remove('high-contrast','grayscale','readable','underline-links','large-spacing');
-  if('speechSynthesis' in window)window.speechSynthesis.cancel();
-}
-function speakPage(){
-  if(!('speechSynthesis' in window)){
-    alert('Browser ini belum mendukung pembacaan teks.');
-    return;
-  }
-  window.speechSynthesis.cancel();
-  const text=document.querySelector('main').innerText;
-  const u=new SpeechSynthesisUtterance(text);
-  u.lang='id-ID';
-  window.speechSynthesis.speak(u);
-}
+let s=16;const r=document.documentElement,p=document.getElementById('panel');document.getElementById('toggle').onclick=()=>p.classList.toggle('open');
+function font(d){s=Math.max(12,Math.min(26,s+d));r.style.setProperty('--fs',s+'px')}function mode(c){document.body.classList.toggle(c)}
+function resetA(){s=16;r.style.setProperty('--fs','16px');document.body.className='';if('speechSynthesis'in window)speechSynthesis.cancel()}
+function speak(){if(!('speechSynthesis'in window))return alert('Browser belum mendukung pembacaan teks.');speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(document.querySelector('main').innerText);u.lang='id-ID';speechSynthesis.speak(u)}
 </script>
-</body>
-</html>
+</body></html>

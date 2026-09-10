@@ -1,0 +1,1 @@
+Upload semua file dalam paket ini ke root repository GitHub Pages. Setelah commit, tunggu deployment selesai lalu tekan Ctrl+F5.
