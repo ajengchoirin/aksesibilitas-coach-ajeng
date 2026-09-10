@@ -1,14 +1,25 @@
-WEBSITE COACH AJENG CHOI - VERSI FINAL
+COACH AJENG CHOI — VERSI GITHUB RINGAN
 
-Perubahan:
-- Agenda 1–4 langsung menuju Google Sites yang sudah dipisahkan.
-- Ditambahkan gambar JEMARI dan Games JEMARI.
-- Semua tulisan tampilan 'Ajeng' dibuat menjadi 'Ajeng Choi'.
-- Menu aksesibilitas tetap tersedia.
+Versi ini dibuat khusus agar mudah di-upload melalui browser GitHub.
 
-Cara update GitHub:
-1. Ekstrak file ZIP.
-2. Upload semua file di dalam folder ini ke root repository aksesibilitas-coach-ajeng.
-3. Jika GitHub meminta konfirmasi penggantian index.html, gunakan file yang baru.
+TETAP TERSEDIA:
+- Beranda Coach Ajeng Choi
+- Agenda 1–4
+- Semua halaman "Baca Versi Aksesibel"
+- Flipbook Heyzine
+- JEMARI dan Games JEMARI
+- Tanya Coach Ajeng Choi
+- Tombol Kembali ke Beranda dan Kembali ke Agenda
+- Aksesibilitas: A+/A-, kontras, grayscale, mudah dibaca,
+  perjelas tautan, spasi teks, baca halaman, reset.
+
+PDF asli tidak dimasukkan ke repository agar ukuran upload jauh lebih kecil.
+Flipbook Heyzine tetap tersedia.
+
+CARA UPLOAD:
+1. Ekstrak ZIP.
+2. Di GitHub repository aksesibilitas-coach-ajeng pilih Add file > Upload files.
+3. Upload SEMUA file hasil ekstrak (bukan file ZIP).
 4. Commit changes.
-5. Tunggu GitHub Pages selesai deploy lalu tekan Ctrl+F5 pada website.
+5. Tunggu GitHub Pages deployment hijau.
+6. Buka website dan tekan Ctrl+F5.
